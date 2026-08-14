@@ -866,3 +866,40 @@ body > main, .home-page { width:100%; max-width:100%; overflow-x:clip; }
   .hero h1 { font-size:clamp(42px,11.6vw,50px); }
   .hero h1 em { font-size:.9em; padding-right:.16em; }
 }
+
+/* Footer background marquee: keep the full DAASK BUILD phrase moving behind the CTA. */
+.site-footer::before {
+  content: "DAASK BUILD   •   DAASK BUILD   •   DAASK BUILD";
+  left: 0;
+  top: 24px;
+  width: max-content;
+  color: rgba(255,255,255,.035);
+  font-size: clamp(96px, 16vw, 280px);
+  line-height: .82;
+  letter-spacing: -.065em;
+  white-space: nowrap;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  animation: daaskFooterMarquee 24s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes daaskFooterMarquee {
+  from { transform: translate3d(4vw,0,0); }
+  to   { transform: translate3d(-52%,0,0); }
+}
+
+@media (max-width: 700px) {
+  .site-footer::before {
+    top: 38px;
+    font-size: clamp(92px, 34vw, 160px);
+    animation-duration: 18s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer::before {
+    animation: none;
+    transform: translate3d(-8%,0,0);
+  }
+}
