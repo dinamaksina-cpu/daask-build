@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
+import LoadingScreen from "./loading-screen";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -34,5 +35,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body><LoadingScreen />{children}</body></html>;
 }
