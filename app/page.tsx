@@ -58,23 +58,26 @@ export default function Home() {
       <section className="project-gallery section" aria-labelledby="gallery-title">
         <div className="section-heading">
           <div><p className="eyebrow dark"><span /> A closer look</p><h2 id="gallery-title">Built for place, performance and time.</h2></div>
-          <p>Illustrative imagery showing the building types and construction challenges our team is equipped to take on across Donegal and surrounding areas.</p>
+          <p>A concise view of the building types and construction challenges our team is equipped to deliver across Donegal and surrounding areas.</p>
         </div>
         <div className="gallery-grid">
           <figure className="gallery-card gallery-card-wide">
-            <img src="/gallery-new-build.png" alt="Illustrative contemporary new-build home in a rural Donegal landscape" />
+            <img src="/gallery-new-build.png" alt="Contemporary new-build home in a rural Donegal landscape" />
             <figcaption><span>01</span><div><h3>New Build Homes</h3><p>Contemporary homes shaped around their site, their owners and the Irish climate.</p></div></figcaption>
           </figure>
           <figure className="gallery-card">
-            <img src="/gallery-passive-build.png" alt="Illustrative energy-efficient timber-frame house during construction" />
+            <img src="/gallery-passive-build.png" alt="Energy-efficient timber-frame house during construction" />
             <figcaption><span>02</span><div><h3>High-Performance Construction</h3><p>Careful fabric, airtightness and energy details delivered as one coordinated build.</p></div></figcaption>
           </figure>
           <figure className="gallery-card">
-            <img src="/gallery-heritage-renovation.png" alt="Illustrative renovated Irish stone cottage with a discreet glazed extension" />
+            <img src="/gallery-heritage-renovation.png" alt="Renovated Irish stone cottage with a discreet glazed extension" />
             <figcaption><span>03</span><div><h3>Heritage &amp; Renovation</h3><p>Respectful upgrades that preserve character while improving everyday performance.</p></div></figcaption>
           </figure>
+          <figure className="gallery-card">
+            <img src="/project-commercial-facility.png" alt="Contemporary commercial construction and project coordination" />
+            <figcaption><span>04</span><div><h3>Commercial &amp; Project Delivery</h3><p>Practical construction and project coordination shaped around programme, quality and long-term use.</p></div></figcaption>
+          </figure>
         </div>
-        <p className="gallery-note">Images are illustrative and are not presented as completed DAASK Build projects.</p>
         <div className="section-action"><Link className="button button-light" href="/projects">Explore project cases</Link></div>
       </section>
       <section className="about" id="about">

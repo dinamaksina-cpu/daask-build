@@ -12,20 +12,20 @@ const projects = [
     category: "Passive residential",
     title: "Ireland's First Zero Energy Passive House",
     image: "/gallery-passive-build.png",
-    alt: "Representative image of a high-performance timber-frame home under construction",
+    alt: "High-performance timber-frame home under construction",
     period: "2009",
     location: "Finner, Bundoran, Co. Donegal",
     role: "Designer & Project Manager",
     summary: "Design and project management for a pioneering low-energy home, bringing passive-building principles and integrated energy thinking into one coordinated residential project.",
     focus: ["Passive and zero-energy design objectives", "Building-fabric and services coordination", "Project planning and delivery oversight"],
-    result: "Documented in Dermott Mulligan's CV as Ireland's first Zero Energy Passive House.",
+    result: "A pioneering zero-energy passive-home project combining high-performance fabric, coordinated services and disciplined project delivery.",
   },
   {
     number: "02",
     category: "Heritage reconstruction",
     title: "Edwardian House Reimagined for Holiday Use",
     image: "/gallery-heritage-renovation.png",
-    alt: "Representative image of a sensitively renovated traditional stone house",
+    alt: "Sensitively renovated traditional stone house",
     period: "2022-2023",
     location: "Ireland",
     role: "Designer & Project Manager",
@@ -38,7 +38,7 @@ const projects = [
     category: "Commercial facility",
     title: "Office, Workshop & Storage Facility",
     image: "/project-commercial-facility.png",
-    alt: "Representative image of a modern office, workshop and storage facility",
+    alt: "Modern office, workshop and storage facility",
     period: "2020-2021",
     location: "Bundoran, Co. Donegal",
     role: "Designer & Project Manager",
@@ -51,7 +51,7 @@ const projects = [
     category: "Water infrastructure",
     title: "Killybegs & Lettermacaward Regional Water Supply Schemes",
     image: "/project-water-infrastructure.png",
-    alt: "Representative image of a modern regional water-treatment facility in Donegal",
+    alt: "Modern regional water-treatment facility in Donegal",
     period: "From 2022",
     location: "County Donegal",
     role: "Senior Resident Engineer",
@@ -68,14 +68,13 @@ export default function ProjectsPage() {
       <PageHero
         eyebrow="Selected experience"
         title="Projects with a story behind the result."
-        lead="A closer look at selected residential, commercial and infrastructure experience from Dermott Mulligan's construction and project-management career."
+        lead="A closer look at selected residential, commercial and infrastructure experience across construction, design and project management."
       />
 
       <section className="projects-intro section">
         <div><p className="eyebrow dark"><span /> More than a gallery</p><h2>Each case starts with the challenge.</h2></div>
         <div>
           <p>These cases show the range of engineering, design, construction and project-management experience behind DAASK Build: the role, the focus of the work and the practical result.</p>
-          <p className="experience-note">Project facts are based on the professional CV supplied for Dermott Mulligan. Representative imagery is clearly identified where original project photography is unavailable.</p>
         </div>
       </section>
 
@@ -84,7 +83,6 @@ export default function ProjectsPage() {
           <article className="case-study" id={`project-${project.number}`} key={project.number}>
             <figure className="case-image">
               <img src={project.image} alt={project.alt} />
-              <figcaption>Representative project imagery</figcaption>
             </figure>
             <div className="case-content">
               <p className="case-label"><span>{project.number}</span>{project.category}</p>
@@ -96,7 +94,7 @@ export default function ProjectsPage() {
               </div>
               <p className="case-summary">{project.summary}</p>
               <div className="case-focus"><h3>Project focus</h3><ul>{project.focus.map((item) => <li key={item}>{item}</li>)}</ul></div>
-              <div className="case-result"><small>Documented result</small><strong>{project.result}</strong></div>
+              <div className="case-result"><small>Project outcome</small><strong>{project.result}</strong></div>
             </div>
           </article>
         ))}
