@@ -911,3 +911,66 @@ body > main, .home-page { width:100%; max-width:100%; overflow-x:clip; }
 @media (max-width: 767px) {
   .footer-credit { margin-top:4px; white-space:normal; }
 }
+
+/* v10 stability: contain decorative motion so it never changes document width. */
+html, body { overflow-x: hidden; }
+.site-footer { overflow: hidden; contain: paint; }
+
+/* Trust strip animation: visual-only, no transforms on layout/content. */
+.trust-strip {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.trust-strip::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(105deg,
+      transparent 0%,
+      transparent 38%,
+      rgba(255,255,255,.035) 46%,
+      rgba(255,92,42,.10) 50%,
+      rgba(255,255,255,.03) 54%,
+      transparent 62%,
+      transparent 100%);
+  background-size: 220% 100%;
+  background-position: 120% 0;
+  animation: trustSafeSweep 9s linear infinite;
+}
+.trust-strip > div { position: relative; z-index: 1; }
+.trust-strip .check {
+  animation: trustSafeGlow 3.8s ease-in-out infinite;
+}
+.trust-strip > div:last-child strong {
+  animation: trustSafeNumber 4.6s ease-in-out infinite;
+}
+
+@keyframes trustSafeSweep {
+  0%   { background-position: 120% 0; opacity: .55; }
+  50%  { opacity: 1; }
+  100% { background-position: -120% 0; opacity: .55; }
+}
+@keyframes trustSafeGlow {
+  0%,100% { box-shadow: 0 0 0 rgba(255,92,42,0); }
+  50% { box-shadow: 0 0 16px rgba(255,92,42,.20); }
+}
+@keyframes trustSafeNumber {
+  0%,100% { text-shadow: 0 0 0 rgba(255,92,42,0); }
+  50% { text-shadow: 0 0 14px rgba(255,92,42,.25); }
+}
+
+@media (max-width:760px) {
+  .trust-strip::after { animation-duration: 11s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-strip::after,
+  .trust-strip .check,
+  .trust-strip > div:last-child strong {
+    animation: none !important;
+  }
+}
