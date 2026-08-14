@@ -974,3 +974,69 @@ html, body { overflow-x: hidden; }
     animation: none !important;
   }
 }
+
+/* v11 - Project gallery side-entry reveal */
+.project-gallery,
+.gallery-grid {
+  overflow: hidden;
+}
+
+.project-gallery .gallery-card.reveal-on-scroll {
+  opacity: 0;
+  filter: blur(5px);
+  transition:
+    opacity .7s ease var(--gallery-delay, 0ms),
+    filter .8s ease var(--gallery-delay, 0ms),
+    transform .95s cubic-bezier(.22,1,.36,1) var(--gallery-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.project-gallery .gallery-card.reveal-on-scroll:nth-child(1) {
+  --gallery-delay: 40ms;
+  transform: translate3d(-72px,0,0);
+}
+.project-gallery .gallery-card.reveal-on-scroll:nth-child(2) {
+  --gallery-delay: 140ms;
+  transform: translate3d(72px,0,0);
+}
+.project-gallery .gallery-card.reveal-on-scroll:nth-child(3) {
+  --gallery-delay: 240ms;
+  transform: translate3d(-72px,0,0);
+}
+.project-gallery .gallery-card.reveal-on-scroll:nth-child(4) {
+  --gallery-delay: 340ms;
+  transform: translate3d(72px,0,0);
+}
+
+.project-gallery .gallery-card.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0,0,0);
+}
+
+/* Keep image hover motion after the reveal without moving the card itself. */
+.project-gallery .gallery-card:hover img {
+  transform: scale(1.045);
+}
+
+@media (max-width: 760px) {
+  .project-gallery .gallery-card.reveal-on-scroll:nth-child(odd) {
+    transform: translate3d(-42px,0,0);
+  }
+  .project-gallery .gallery-card.reveal-on-scroll:nth-child(even) {
+    transform: translate3d(42px,0,0);
+  }
+  .project-gallery .gallery-card.reveal-on-scroll.is-revealed {
+    transform: translate3d(0,0,0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-gallery .gallery-card.reveal-on-scroll,
+  .project-gallery .gallery-card.reveal-on-scroll.is-revealed {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}
