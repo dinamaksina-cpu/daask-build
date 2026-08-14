@@ -3,7 +3,7 @@ import { ContactBand, PageHero, SiteFooter, SiteHeader } from "../site-component
 
 export const metadata: Metadata = {
   title: "Selected Projects | DAASK Build Ltd",
-  description: "Selected construction, passive-building, renovation and infrastructure experience from Dermott Mulligan and DAASK Build Ltd.",
+  description: "Selected construction, passive-building, renovation and infrastructure projects from DAASK Build Ltd.",
 };
 
 const projects = [
@@ -15,7 +15,7 @@ const projects = [
     alt: "High-performance timber-frame home under construction",
     period: "2009",
     location: "Finner, Bundoran, Co. Donegal",
-    role: "Designer & Project Manager",
+    role: "Design & Project Management",
     summary: "Design and project management for a pioneering low-energy home, bringing passive-building principles and integrated energy thinking into one coordinated residential project.",
     focus: ["Passive and zero-energy design objectives", "Building-fabric and services coordination", "Project planning and delivery oversight"],
     result: "A pioneering zero-energy passive-home project combining high-performance fabric, coordinated services and disciplined project delivery.",
@@ -28,7 +28,7 @@ const projects = [
     alt: "Sensitively renovated traditional stone house",
     period: "2022-2023",
     location: "Ireland",
-    role: "Designer & Project Manager",
+    role: "Design Coordination & Project Management",
     summary: "Reconstruction of an Edwardian house into a distinctive holiday home, balancing the needs of an existing building with a clear new purpose.",
     focus: ["Existing-building reconstruction", "Design and programme coordination", "Careful integration of old and new work"],
     result: "A renewed property planned around character, usability and long-term holiday accommodation.",
@@ -41,7 +41,7 @@ const projects = [
     alt: "Modern office, workshop and storage facility",
     period: "2020-2021",
     location: "Bundoran, Co. Donegal",
-    role: "Designer & Project Manager",
+    role: "Construction & Project Management",
     summary: "A purpose-designed operational facility combining office space, workshop functions and practical storage within one coordinated building project.",
     focus: ["Commercial building design", "Workshop and storage planning", "Construction and project coordination"],
     result: "Office, workshop and storage requirements brought together in one practical facility.",
@@ -54,7 +54,7 @@ const projects = [
     alt: "Modern regional water-treatment facility in Donegal",
     period: "From 2022",
     location: "County Donegal",
-    role: "Senior Resident Engineer",
+    role: "Resident Engineering & Site Oversight",
     summary: "Resident-engineering leadership across an €18 million design-build-operate contract involving civil, mechanical and electrical works on two regional water-supply schemes.",
     focus: ["Killybegs WTP capacity upgrade", "New DAF treatment capacity at Lettermacaward", "Contract, quality, safety and multidisciplinary site oversight"],
     result: "Major coordinated upgrades covering treatment capacity, pumping stations and supporting infrastructure.",
@@ -68,13 +68,13 @@ export default function ProjectsPage() {
       <PageHero
         eyebrow="Selected experience"
         title="Projects with a story behind the result."
-        lead="A closer look at selected residential, commercial and infrastructure experience across construction, design and project management."
+        lead="A closer look at selected residential, commercial and infrastructure projects across construction, coordination and project delivery."
       />
 
       <section className="projects-intro section">
         <div><p className="eyebrow dark"><span /> More than a gallery</p><h2>Each case starts with the challenge.</h2></div>
         <div>
-          <p>These cases show the range of engineering, design, construction and project-management experience behind DAASK Build: the role, the focus of the work and the practical result.</p>
+          <p>These case studies show the range of DAASK Build’s involvement across engineering, construction, coordination and project delivery — from the scope of work through to the practical outcome.</p>
         </div>
       </section>
 
@@ -90,7 +90,7 @@ export default function ProjectsPage() {
               <div className="case-facts">
                 <div><small>Period</small><strong>{project.period}</strong></div>
                 <div><small>Location</small><strong>{project.location}</strong></div>
-                <div><small>Role</small><strong>{project.role}</strong></div>
+                <div><small>DAASK Involvement</small><strong>{project.role}</strong></div>
               </div>
               <p className="case-summary">{project.summary}</p>
               <div className="case-focus"><h3>Project focus</h3><ul>{project.focus.map((item) => <li key={item}>{item}</li>)}</ul></div>
