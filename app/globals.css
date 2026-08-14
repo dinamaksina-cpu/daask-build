@@ -1041,54 +1041,18 @@ html, body { overflow-x: hidden; }
   }
 }
 
-/* v12 iOS/Safari hardening: keep the site pinned to the device viewport and avoid white canvas on zoom/overscroll. */
-html {
-  width:100%;
-  min-width:100%;
-  max-width:100%;
-  overflow-x:hidden;
-  background:#02121d;
+/* v13 visual restore + safe horizontal overflow guard.
+   Keeps the original light/dark section colours from v11 intact. */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
-body {
-  width:100%;
-  min-width:100%;
-  max-width:100%;
-  overflow-x:hidden;
-  background:#02121d;
-  overscroll-behavior-x:none;
+.home-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
-.home-page,
-.home-page > *,
-.site-header,
-.hero,
-.trust-strip,
-.section,
-.project-gallery,
-.site-footer {
-  max-width:100%;
-}
-.home-page { position:relative; overflow-x:hidden; }
-.hero-drawing { max-width:100%; overflow:hidden; }
-
-@media (max-width:760px) {
-  html, body { touch-action:pan-y; }
-  .hero-drawing { width:100%; left:0; right:0; }
-  .hero,
-  .hero-media,
-  .hero-hotspots,
-  .trust-strip,
-  .project-gallery,
-  .gallery-grid,
-  .site-footer { overflow-x:hidden; }
-
-  /* Mobile side reveal without horizontal painted overflow. */
-  .project-gallery .gallery-card.reveal-on-scroll:nth-child(odd),
-  .project-gallery .gallery-card.reveal-on-scroll:nth-child(even) {
-    transform:translate3d(0,18px,0);
-    clip-path:inset(0 12% 0 12%);
-  }
-  .project-gallery .gallery-card.reveal-on-scroll.is-revealed {
-    transform:translate3d(0,0,0);
-    clip-path:inset(0 0 0 0);
-  }
+@supports not (overflow: clip) {
+  html, body, .home-page { overflow-x: hidden; }
 }
