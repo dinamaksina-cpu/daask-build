@@ -903,3 +903,11 @@ body > main, .home-page { width:100%; max-width:100%; overflow-x:clip; }
     transform: translate3d(-8%,0,0);
   }
 }
+
+
+/* Professional agency credit in the footer. */
+.footer-credit { color:#9eb3bf; white-space:nowrap; }
+.footer-credit strong { color:#fff; font-weight:800; letter-spacing:.01em; }
+@media (max-width: 767px) {
+  .footer-credit { margin-top:4px; white-space:normal; }
+}
