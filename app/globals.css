@@ -826,9 +826,10 @@ body.is-scrolled main:not(.home-page) .site-header { box-shadow:0 12px 38px rgba
   .site-scroll-progress,.site-cursor-glow,.hero-scan { display:none; }
 }
 
-/* Mobile viewport hardening: prevent pinch/zoom and italic headline overflow from exposing canvas */
-html, body { width:100%; max-width:100%; overflow-x:clip; }
-body > main, .home-page { width:100%; max-width:100%; overflow-x:clip; }
+/* Mobile viewport hardening: keep the layout anchored to the device width while still allowing zoom-in. */
+html { width:100%; max-width:100%; overflow-x:clip; background:var(--navy); }
+body { width:100%; max-width:100%; min-width:100%; overflow-x:clip; }
+body > main, .home-page { width:100%; max-width:100%; min-width:0; overflow-x:clip; }
 
 @media (max-width:760px) {
   .hero { width:100%; max-width:100%; overflow:hidden; }
